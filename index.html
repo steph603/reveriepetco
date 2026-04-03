@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reverie Pet Co.</title>
   <meta name="description" content="Premium handmade pet accessories from a veterinary nurse in Melbourne, Australia." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -35,7 +36,7 @@
       --font-heading: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'Raleway', system-ui, sans-serif;
 
-      --font-size-name:    clamp(2rem, 6vw, 2.75rem);
+      --font-size-name:    clamp(3rem, 9vw, 4.25rem);
       --font-size-tagline: clamp(0.75rem, 2vw, 0.85rem);
       --font-size-button:  0.8rem;
       --font-size-footer:  0.7rem;
@@ -118,8 +119,8 @@
        Avatar
        ============================================================ */
     .avatar {
-      width: 96px;
-      height: 96px;
+      width: clamp(115px, 31vw, 165px);
+      height: clamp(115px, 31vw, 165px);
       border-radius: var(--radius-full);
       background-color: var(--color-avatar-bg);
       border: 2px solid var(--color-wisteria);
@@ -128,12 +129,13 @@
       justify-content: center;
       overflow: hidden;
       flex-shrink: 0;
+      margin-bottom: calc(-1 * var(--space-lg));
     }
 
     .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
       display: block;
     }
 
@@ -154,7 +156,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: var(--space-sm);
+      gap: var(--space-md);
     }
 
     .name {
@@ -164,6 +166,17 @@
       letter-spacing: var(--letter-spacing-tight);
       color: var(--color-midnight-ink);
       line-height: 1.1;
+
+      .subheader {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: clamp(0.95rem, 2.25vw, 1.1rem);
+        font-weight: var(--font-weight-light);
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: var(--color-midnight-ink);
+        margin-top: 0.2em;
+      }
     }
 
     .tagline {
@@ -256,15 +269,11 @@
   <main class="card">
 
     <div class="avatar" aria-label="Reverie Pet Co. profile photo">
-      <!--
-        When you have a photo, replace the placeholder span with:
-        <img src="avatar.jpg" alt="Reverie Pet Co." />
-      -->
-      <span class="avatar__placeholder" aria-hidden="true">R</span>
+      <img src="assets/logo.svg" alt="Reverie Pet Co. logo" />
     </div>
 
     <div class="identity">
-      <h1 class="name">Reverie Pet Co.</h1>
+      <h1 class="name">Reverie<span class="subheader">Pet Co.</span></h1>
       <p class="tagline">
         Premium pet accessories <br>handmade by a veterinary nurse<br>
       </p>
