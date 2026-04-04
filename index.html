@@ -224,7 +224,7 @@
       font-size: var(--font-size-button);
       font-weight: var(--font-weight-medium);
       letter-spacing: var(--letter-spacing-wide);
-      text-transform: uppercase;
+      /*text-transform: uppercase;*/
       transition:
         background-color var(--transition-base),
         color           var(--transition-base),
@@ -253,6 +253,86 @@
       width: 16px;
       height: 16px;
     }
+
+    /* ============================================================
+       Newsletter
+       ============================================================ */
+    .newsletter {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .newsletter__label {
+      font-family: var(--font-body);
+      font-size: var(--font-size-footer);
+      font-weight: var(--font-weight-light);
+      letter-spacing: var(--letter-spacing-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .newsletter__row {
+      display: flex;
+      width: 100%;
+      gap: var(--space-xs);
+    }
+
+    .newsletter__input {
+      flex: 1;
+      padding: 0.75rem var(--space-sm);
+      border: 1px solid var(--color-moonstone);
+      border-radius: var(--radius-button);
+      background-color: var(--color-aged-parchment);
+      font-family: var(--font-body);
+      font-size: var(--font-size-button);
+      font-weight: var(--font-weight-light);
+      color: var(--color-midnight-ink);
+      outline: none;
+      transition: border-color var(--transition-base);
+    }
+
+    .newsletter__input::placeholder {
+      color: var(--color-pewter-silver);
+    }
+
+    .newsletter__input:focus {
+      border-color: var(--color-wisteria);
+    }
+
+    .newsletter__submit {
+      padding: 0.75rem var(--space-md);
+      border: none;
+      border-radius: var(--radius-button);
+      background-color: var(--color-wisteria);
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: var(--font-size-button);
+      font-weight: var(--font-weight-medium);
+      letter-spacing: var(--letter-spacing-wide);
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color var(--transition-base), box-shadow var(--transition-base);
+      white-space: nowrap;
+    }
+
+    .newsletter__submit:hover {
+      background-color: var(--color-accent-dark);
+      box-shadow: var(--shadow-button-hover);
+    }
+
+    .newsletter__response {
+      font-size: var(--font-size-footer);
+      font-family: var(--font-body);
+      font-weight: var(--font-weight-light);
+      letter-spacing: var(--letter-spacing-wide);
+      text-align: center;
+    }
+
+    #mce-error-response  { color: #b05a5a; }
+    #mce-success-response { color: var(--color-silvery-sage); }
 
     /* ============================================================
        Footer
@@ -304,6 +384,38 @@
       </a>
 
     </nav>
+
+    <form
+      class="newsletter"
+      action="https://reveriepetco.us22.list-manage.com/subscribe/post?u=8175842e77d196d6153afa523&amp;id=c41b971220&amp;f_id=008ac2e1f0"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      target="_blank"
+      novalidate>
+
+      <label class="newsletter__label" for="mce-EMAIL">Be the first to know when we launch</label>
+
+      <div class="newsletter__row">
+        <input
+          class="newsletter__input"
+          type="email"
+          name="EMAIL"
+          id="mce-EMAIL"
+          placeholder="your@email.com"
+          required />
+        <button class="newsletter__submit" type="submit" name="subscribe">Subscribe</button>
+      </div>
+
+      <!-- Honeypot — do not remove -->
+      <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        <input type="text" name="b_8175842e77d196d6153afa523_c41b971220" tabindex="-1" value="" />
+      </div>
+
+      <div id="mce-error-response"   class="newsletter__response" style="display:none;"></div>
+      <div id="mce-success-response" class="newsletter__response" style="display:none;"></div>
+
+    </form>
 
     <footer class="footer">
       <p>Melbourne, Australia</p>
